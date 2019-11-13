@@ -64,7 +64,7 @@ class Conversión {
         }
     }
 
-    public float Valor() {
+    public double Valor() {
         String tok;
         aPostfija();
         while (!postfija.esVacia()) {
@@ -74,15 +74,15 @@ class Conversión {
             }else {
                 String num2 = (String)resultado.Desapilar();
                 String num1 = (String)resultado.Desapilar();
-                String r = Operar(Float.parseFloat(num1), Float.parseFloat(num2), tok.charAt(0));
+                String r = Operar(Double.parseDouble(num1), Double.parseDouble(num2), tok.charAt(0));
                 resultado.Apilar(r);
             }
         }
-        return Float.parseFloat((String)resultado.Desapilar());
+        return Double.parseDouble((String)resultado.Desapilar());
     }
 
-    public String Operar(float num1, float num2, char o) {
-        float valor = num1;
+    public String Operar(double num1, double num2, char o) {
+        double valor = num1;
         switch (o) {
             case '+':
                 valor += num2;
@@ -97,7 +97,7 @@ class Conversión {
                 valor /= num2;
                 break;
             case '^':
-                valor = (float) Math.pow(num1, num2);
+                valor = Math.pow(num1, num2);
                 break;       
         }
         return String.valueOf(valor);
@@ -105,7 +105,7 @@ class Conversión {
 
     private boolean esNumero(String num) {
         try {
-            Float.parseFloat(num);
+            Double.parseDouble(num);
             return true;
         }catch (java.lang.NumberFormatException e) {
              return false;
