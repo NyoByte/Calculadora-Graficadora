@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
  * @author Nyo
  */
 public class Calculadora extends javax.swing.JFrame {
-    private boolean haynumero=false, esdecimal=false, hayAns=false;
+    private boolean haynumero=false, esdecimal=false, hayAnsN=false, hayAns=false;
     private double memoria;
     private int contparentesis=0;
     
@@ -444,67 +444,86 @@ public class Calculadora extends javax.swing.JFrame {
     
     //Botones numericos
     private void Button_N1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N1ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"1");
-        haynumero=true;
-        hayAns=true;
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"1");
+            haynumero=true;
+            hayAns=true;
+        }
     }//GEN-LAST:event_Button_N1ActionPerformed
 
     private void Button_N2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N2ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"2");
-        haynumero=true;
-        hayAns=true;
-
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"2");
+            haynumero=true;
+            hayAns=true;
+        }
     }//GEN-LAST:event_Button_N2ActionPerformed
 
     private void Button_N3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N3ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"3");
-        haynumero=true;
-        hayAns=true;
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"3");
+            haynumero=true;
+            hayAns=true;
+        }
     }//GEN-LAST:event_Button_N3ActionPerformed
 
     private void Button_N4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N4ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"4");
-        haynumero=true;
-        hayAns=true;     
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"4");
+            haynumero=true;
+            hayAns=true;
+        }    
     }//GEN-LAST:event_Button_N4ActionPerformed
 
     private void Button_N5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N5ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"5");
-        haynumero=true;
-        hayAns=true;
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"5");
+            haynumero=true;
+            hayAns=true;
+        }
     }//GEN-LAST:event_Button_N5ActionPerformed
 
     private void Button_N6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N6ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"6");
-        haynumero=true;
-        hayAns=true;           
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"6");
+            haynumero=true;
+            hayAns=true;
+        }        
     }//GEN-LAST:event_Button_N6ActionPerformed
 
     private void Button_N7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N7ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"7");
-        haynumero=true;
-        hayAns=true;
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"7");
+            haynumero=true;
+            hayAns=true;
+        }
     }//GEN-LAST:event_Button_N7ActionPerformed
 
     private void Button_N8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N8ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"8");
-        haynumero=true;
-        hayAns=true;   
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"8");
+            haynumero=true;
+            hayAns=true;
+        }  
     }//GEN-LAST:event_Button_N8ActionPerformed
 
     private void Button_N9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N9ActionPerformed
-        txtPantalla.setText(txtPantalla.getText()+"9");
-        haynumero=true;
-        hayAns=true;   
+        if(hayAnsN==false){
+            txtPantalla.setText(txtPantalla.getText()+"9");
+            haynumero=true;
+            hayAns=true;
+        }  
     }//GEN-LAST:event_Button_N9ActionPerformed
 
     private void Button_N0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N0ActionPerformed
         if (esdecimal==true) {
             txtPantalla.setText(txtPantalla.getText()+"0");
         }else{
-            txtPantalla.setText(txtPantalla.getText()+"0");
-            haynumero=true;
-            hayAns=true;
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"0");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N0ActionPerformed
     //Botón la función de punto decimal
@@ -514,7 +533,7 @@ public class Calculadora extends javax.swing.JFrame {
         }else{
             if(haynumero==true){
                 if (!txtPantalla.getText().endsWith("+") && !txtPantalla.getText().endsWith("-") && !txtPantalla.getText().endsWith("*") &&
-                        !txtPantalla.getText().endsWith("/")) {
+                        !txtPantalla.getText().endsWith("/")&& !txtPantalla.getText().endsWith("^")) {
                     txtPantalla.setText(txtPantalla.getText()+".");
                     esdecimal=true;           
                 }
@@ -531,6 +550,7 @@ public class Calculadora extends javax.swing.JFrame {
                 txtPantalla.setText(txtPantalla.getText()+"+");
                 esdecimal=false;
                 hayAns=false;
+                hayAnsN=false;
             }
         }
     }//GEN-LAST:event_Button_SumaActionPerformed
@@ -541,6 +561,7 @@ public class Calculadora extends javax.swing.JFrame {
             txtPantalla.setText(txtPantalla.getText()+"-");
             esdecimal=false;
             hayAns=false;
+            hayAnsN=false;
         }       
     }//GEN-LAST:event_Button_RestaActionPerformed
 //Botón de la función de multiplicar
@@ -553,6 +574,7 @@ public class Calculadora extends javax.swing.JFrame {
                 txtPantalla.setText(txtPantalla.getText()+"*");
                 esdecimal=false;
                 hayAns=false;
+                hayAnsN=false;
             }   
         }
     }//GEN-LAST:event_Button_MultiplicacionActionPerformed
@@ -566,6 +588,7 @@ public class Calculadora extends javax.swing.JFrame {
                 txtPantalla.setText(txtPantalla.getText()+"/");
                 esdecimal=false;
                 hayAns=false;
+                hayAnsN=false;
             }    
         }
     }//GEN-LAST:event_Button_DivisionActionPerformed
@@ -595,10 +618,11 @@ public class Calculadora extends javax.swing.JFrame {
         if (esdecimal==true) {
           
         }else{
-            if(hayAns==false){
+            if(hayAns==false && hayAnsN==false){
                 txtPantalla.setText(txtPantalla.getText()+ans);
+                esdecimal=true;
                 haynumero=true;
-                hayAns=true;
+                hayAnsN=true;
             }
         }      
     }//GEN-LAST:event_Button_AnsActionPerformed
@@ -623,6 +647,7 @@ public class Calculadora extends javax.swing.JFrame {
         esdecimal=false;
         haynumero=false;
         hayAns=false;
+        hayAnsN=false;
         contparentesis=0;
     }//GEN-LAST:event_Button_CActionPerformed
  //Botón con la función de MS
@@ -638,7 +663,27 @@ public class Calculadora extends javax.swing.JFrame {
             if(txtPantalla.getText().endsWith(")")){
                 contparentesis++;
             }
-            txtPantalla.setText(txtPantalla.getText().substring(0,txtPantalla.getText().length()-1));
+            if(txtPantalla.getText().endsWith(".")){
+                esdecimal=false;
+            }
+            if(txtPantalla.getText().endsWith("+")||txtPantalla.getText().endsWith("*")||
+                    txtPantalla.getText().endsWith("/")||txtPantalla.getText().endsWith("^")){
+                esdecimal=true;
+                hayAnsN=false;
+                hayAns=false;
+            }
+            if(txtPantalla.getText().endsWith("-")){
+                txtPantalla.setText(txtPantalla.getText().substring(0,txtPantalla.getText().length()-1));
+                if(txtPantalla.getText().endsWith("/")||txtPantalla.getText().endsWith("*")||txtPantalla.getText().endsWith("^")){
+                    esdecimal=false;
+                }else{
+                    esdecimal=true;
+                    hayAnsN=false;
+                    hayAns=false;
+                }
+            }else{
+                txtPantalla.setText(txtPantalla.getText().substring(0,txtPantalla.getText().length()-1));
+            }
         }
         if (txtPantalla.getText().length()==0) {
             Button_CActionPerformed(evt);
@@ -682,7 +727,6 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void GraficadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficadoraActionPerformed
         Graficadora grafica = new Graficadora();
-
         grafica.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GraficadoraActionPerformed
@@ -710,7 +754,6 @@ public class Calculadora extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Calculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

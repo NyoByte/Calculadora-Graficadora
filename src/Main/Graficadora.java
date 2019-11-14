@@ -1,16 +1,14 @@
 package Main;
 
-
-
 import java.awt.Image;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-
 public class Graficadora extends javax.swing.JFrame {
-
+    private Grafica grafica = new Grafica("Grafico de la Funcion", "X", "Y");
+    private Lista lista = new Lista();
    
     public Graficadora() {
         initComponents();
@@ -22,8 +20,7 @@ public class Graficadora extends javax.swing.JFrame {
 //        Icon iconoFondo = new ImageIcon(fondo1.getImage().getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_DEFAULT));
 //        fondo.setIcon(iconoFondo);
     }
-
-   
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -34,10 +31,10 @@ public class Graficadora extends javax.swing.JFrame {
         Graficadora = new javax.swing.JButton();
         Operacional = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        definicion = new javax.swing.JTextField();
-        jPanel4 = grafica.obtieneGrafica();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtFuncion = new javax.swing.JTextField();
+        Cuadrante = grafica.obtieneGrafica();
+        Graficar = new javax.swing.JButton();
+        Añadir = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
@@ -90,47 +87,47 @@ public class Graficadora extends javax.swing.JFrame {
         jLabel1.setText("Función");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
-        definicion.addActionListener(new java.awt.event.ActionListener() {
+        txtFuncion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                definicionActionPerformed(evt);
+                txtFuncionActionPerformed(evt);
             }
         });
-        getContentPane().add(definicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 214, -1));
+        getContentPane().add(txtFuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 214, -1));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        Cuadrante.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CuadranteLayout = new javax.swing.GroupLayout(Cuadrante);
+        Cuadrante.setLayout(CuadranteLayout);
+        CuadranteLayout.setHorizontalGroup(
+            CuadranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 460, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CuadranteLayout.setVerticalGroup(
+            CuadranteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 340, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 460, 340));
+        getContentPane().add(Cuadrante, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 460, 340));
 
-        jButton2.setBackground(new java.awt.Color(102, 255, 102));
-        jButton2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButton2.setText("Graficar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Graficar.setBackground(new java.awt.Color(153, 153, 255));
+        Graficar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        Graficar.setText("Graficar");
+        Graficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                GraficarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 90, -1));
+        getContentPane().add(Graficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 90, -1));
 
-        jButton3.setBackground(new java.awt.Color(102, 255, 102));
-        jButton3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jButton3.setText("Añadir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Añadir.setBackground(new java.awt.Color(153, 153, 255));
+        Añadir.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        Añadir.setText("Añadir");
+        Añadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AñadirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 90, -1));
+        getContentPane().add(Añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Eje Y");
@@ -144,47 +141,47 @@ public class Graficadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void definicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_definicionActionPerformed
+    private void txtFuncionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFuncionActionPerformed
    
-    }//GEN-LAST:event_definicionActionPerformed
+    }//GEN-LAST:event_txtFuncionActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try {
-          
-            String def = definicion.getText();
+    private void GraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficarActionPerformed
+        try{
+            String def = txtFuncion.getText();
+            lista.Agregar(def);
             double x0= -10;
             double xn= 10;
             double d= 0.1;
             
             Funcion f = new Funcion(def);
-            double[] x=f.rango(x0, xn, d);
-            double [] y = f.eval(x);
-            grafica.crearGrafica(def, x, y);
-        } catch (Exception ex) {
+            double[] x = f.Rango(x0, xn, d);
+            double [] y = f.Eval(x);
+            grafica.CrearGrafica(def, x, y);
+        }catch(Exception ex) {
             Logger.getLogger(Graficadora.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_GraficarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirActionPerformed
+        try{
+            String def = txtFuncion.getText();
+            if(lista.ExisteItem(def)==false){
+                lista.Agregar(def);
+                double x0= -10;
+                double xn= 10;
+                double d= 0.1;
 
-        
-        try {
-         String def = definicion.getText();
-            double x0= -10;
-            double xn= 10;
-            double d= 0.1;
-            
-            Funcion f = new Funcion(def);
-            double[] x=f.rango(x0, xn, d);
-            double [] y = f.eval(x);
-            grafica.agregarGrafica(def, x, y);
-        } catch (Exception ex) {
+                Funcion f = new Funcion(def);
+                double[] x=f.Rango(x0, xn, d);
+                double [] y = f.Eval(x);
+                grafica.AgregarGrafica(def, x, y);
+            }else{
+                
+            }
+        }catch(Exception ex) {
             Logger.getLogger(Graficadora.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-     
-    }//GEN-LAST:event_jButton3ActionPerformed
+        } 
+    }//GEN-LAST:event_AñadirActionPerformed
 
     private void GraficadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficadoraActionPerformed
 
@@ -192,14 +189,11 @@ public class Graficadora extends javax.swing.JFrame {
 
     private void OperacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacionalActionPerformed
         Calculadora cal = new Calculadora();
-
         cal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_OperacionalActionPerformed
 
-   
-    public static void main(String args[]) {
-        
+    public static void main(String args[]) {    
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Graficadora().setVisible(true);
@@ -208,26 +202,21 @@ public class Graficadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Añadir;
+    private javax.swing.JPanel Cuadrante;
     private javax.swing.JButton Graficadora;
+    private javax.swing.JButton Graficar;
     private javax.swing.JButton Operacional;
-    private javax.swing.JTextField definicion;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel logo;
+    private javax.swing.JTextField txtFuncion;
     // End of variables declaration//GEN-END:variables
-
-    Grafica grafica=new Grafica("Grafico de la Funcion", "X", "Y");
-
-
-
 }
 
 

@@ -9,7 +9,7 @@ public class Cola {
         this.first = null;
         this.last = null;
     }
-    
+
     public boolean esVacia(){
         if(first==null){
             return true;
