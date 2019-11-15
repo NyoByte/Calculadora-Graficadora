@@ -64,7 +64,8 @@ public class Calculadora extends javax.swing.JFrame {
         Graficadora = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora ");
+        setTitle("Calculadora By.Nyo");
+        setLocation(new java.awt.Point(600, 200));
 
         Button_Exp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Button_Exp.setText("^");
@@ -444,85 +445,105 @@ public class Calculadora extends javax.swing.JFrame {
     
     //Botones numericos
     private void Button_N1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N1ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"1");
-            haynumero=true;
-            hayAns=true;
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"1");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N1ActionPerformed
 
     private void Button_N2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N2ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"2");
-            haynumero=true;
-            hayAns=true;
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"2");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N2ActionPerformed
 
     private void Button_N3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N3ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"3");
-            haynumero=true;
-            hayAns=true;
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"3");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N3ActionPerformed
 
     private void Button_N4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N4ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"4");
-            haynumero=true;
-            hayAns=true;
-        }    
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"4");
+                haynumero=true;
+                hayAns=true;
+            }
+        }   
     }//GEN-LAST:event_Button_N4ActionPerformed
 
     private void Button_N5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N5ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"5");
-            haynumero=true;
-            hayAns=true;
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"5");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N5ActionPerformed
 
     private void Button_N6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N6ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"6");
-            haynumero=true;
-            hayAns=true;
-        }        
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"6");
+                haynumero=true;
+                hayAns=true;
+            }
+        }       
     }//GEN-LAST:event_Button_N6ActionPerformed
 
     private void Button_N7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N7ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"7");
-            haynumero=true;
-            hayAns=true;
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"7");
+                haynumero=true;
+                hayAns=true;
+            }
         }
     }//GEN-LAST:event_Button_N7ActionPerformed
 
     private void Button_N8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N8ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"8");
-            haynumero=true;
-            hayAns=true;
-        }  
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"8");
+                haynumero=true;
+                hayAns=true;
+            }
+        } 
     }//GEN-LAST:event_Button_N8ActionPerformed
 
     private void Button_N9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N9ActionPerformed
-        if(hayAnsN==false){
-            txtPantalla.setText(txtPantalla.getText()+"9");
-            haynumero=true;
-            hayAns=true;
-        }  
+        if(!txtPantalla.getText().endsWith(")")){
+            if(hayAnsN==false){
+                txtPantalla.setText(txtPantalla.getText()+"9");
+                haynumero=true;
+                hayAns=true;
+            }
+        }
     }//GEN-LAST:event_Button_N9ActionPerformed
 
     private void Button_N0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_N0ActionPerformed
         if (esdecimal==true) {
             txtPantalla.setText(txtPantalla.getText()+"0");
         }else{
-            if(hayAnsN==false){
-                txtPantalla.setText(txtPantalla.getText()+"0");
-                haynumero=true;
-                hayAns=true;
+            if(!txtPantalla.getText().endsWith(")")){
+                if(hayAnsN==false){
+                    txtPantalla.setText(txtPantalla.getText()+"0");
+                    haynumero=true;
+                    hayAns=true;
+                }
             }
         }
     }//GEN-LAST:event_Button_N0ActionPerformed

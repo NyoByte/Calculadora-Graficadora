@@ -6,10 +6,10 @@ import java.util.StringTokenizer;
  *
  * @author Nyo
  */
-class Conversión {
-    Pila signo, resultado;
-    Cola expresion, postfija;
-    String cad;
+public class Conversión {
+    private Pila signo, resultado;
+    private Cola expresion, postfija;
+    private String cad;
 
     public Conversión() {
         expresion = new Cola();

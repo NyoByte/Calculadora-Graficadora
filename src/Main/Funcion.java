@@ -13,7 +13,7 @@ public class Funcion {
     }
 
     public double Eval(double x) throws Exception {
-        double r = Double.NaN;
+        double r;//= Double.NaN;
         Parser.setX(x);
         r = Parser.getValue();
         return r;
