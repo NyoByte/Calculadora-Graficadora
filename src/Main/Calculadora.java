@@ -16,7 +16,6 @@ public class Calculadora extends javax.swing.JFrame {
     
     public Calculadora() {
         initComponents();
-       //img1.setIcon(new ImageIcon("src/Imagenes/LogoUlima.png"));
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/LogoUlima.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(img1.getWidth(), img1.getHeight(), Image.SCALE_DEFAULT));
         img1.setIcon(icono);
